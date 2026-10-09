@@ -67,6 +67,22 @@ Include tests for at least:
 
 Document the changes you made and any design decisions that were important to the solution.
 
+### Implemented changes
+
+- Box completion is calculated when a line is added, so scoring and the extra-turn
+  rule use the same result.
+- Board dimensions can be selected with `--rows` and `--cols`; the default remains
+  2 by 2.
+- Invalid orientations, coordinates, repeated lines, non-positive board dimensions,
+  and moves after the board is complete are rejected without changing game state.
+- Automated tests live in `tests/test_game.py` and use only Python's standard library.
+
+Run the tests with:
+
+```text
+python3 -m unittest discover -s tests
+```
+
 ## Constraints
 
 - Keep the project modular.
