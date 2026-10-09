@@ -19,8 +19,8 @@ class DotsAndBoxes:
             raw = input(f"Player {self.current + 1}, move: ").strip().upper()
             parts = raw.split()
 
-            if len(parts) != 3:
-                print("Invalid format.")
+            if len(parts) != 3 or parts[0] not in {"H", "V"}:
+                print("Invalid format. Use H row col or V row col.")
                 continue
 
             orientation, row, col = parts

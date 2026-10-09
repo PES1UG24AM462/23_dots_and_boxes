@@ -1,5 +1,7 @@
 class Board:
     def __init__(self, rows=2, cols=2):
+        if rows < 1 or cols < 1:
+            raise ValueError("Board dimensions must be positive.")
         self.rows = rows
         self.cols = cols
         self.horizontal = [[False] * cols for _ in range(rows + 1)]

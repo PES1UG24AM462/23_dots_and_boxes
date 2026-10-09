@@ -1,4 +1,7 @@
 def valid_move(board, orientation, row, col):
+    if board.is_complete():
+        return False
+
     if orientation not in {"H", "V"}:
         return False
 
