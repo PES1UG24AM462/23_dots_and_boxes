@@ -14,7 +14,3 @@ def valid_move(board, orientation, row, col):
         and 0 <= col <= board.cols
         and not board.vertical[row][col]
     )
-
-
-def completed_boxes(board, before):
-    return len(board.completed - before)

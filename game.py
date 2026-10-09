@@ -1,5 +1,5 @@
 from board import Board
-from rules import valid_move, completed_boxes
+from rules import valid_move
 
 class DotsAndBoxes:
     def __init__(self):
@@ -32,9 +32,7 @@ class DotsAndBoxes:
                 print("Invalid or already-used move.")
                 continue
 
-            before = set(self.board.completed)
-            self.board.add_line(orientation, row, col)
-            newly_completed = completed_boxes(self.board, before)
+            newly_completed = self.board.add_line(orientation, row, col)
 
             if newly_completed:
                 self.scores[self.current] += newly_completed

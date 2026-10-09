@@ -11,9 +11,10 @@ class Board:
             self.horizontal[row][col] = True
         else:
             self.vertical[row][col] = True
-        self._update_completed()
+        return self._update_completed()
 
     def _update_completed(self):
+        newly_completed = 0
         for r in range(self.rows):
             for c in range(self.cols):
                 if (
@@ -22,7 +23,10 @@ class Board:
                     and self.vertical[r][c]
                     and self.vertical[r][c + 1]
                 ):
-                    self.completed.add((r, c))
+                    if (r, c) not in self.completed:
+                        self.completed.add((r, c))
+                        newly_completed += 1
+        return newly_completed
 
     def is_complete(self):
         total = self.rows * (self.cols + 1) + self.cols * (self.rows + 1)
