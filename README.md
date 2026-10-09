@@ -14,6 +14,12 @@ From this folder:
 python main.py
 ```
 
+You can choose a larger board with command-line options:
+
+```text
+python main.py --rows 3 --cols 4
+```
+
 Enter moves in the form:
 
 ```text

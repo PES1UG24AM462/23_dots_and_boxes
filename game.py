@@ -2,13 +2,14 @@ from board import Board
 from rules import valid_move
 
 class DotsAndBoxes:
-    def __init__(self):
-        self.board = Board()
+    def __init__(self, rows=2, cols=2):
+        self.board = Board(rows, cols)
         self.current = 0
         self.scores = [0, 0]
 
     def run(self):
         print("Dots and Boxes")
+        print(f"Board: {self.board.rows} rows x {self.board.cols} columns")
         print("Enter moves as H row col or V row col.")
         print("Rows and columns start at 0.")
         print("Example: H 0 1")
